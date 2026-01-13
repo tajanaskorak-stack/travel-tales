@@ -32,6 +32,12 @@ export default function Header() {
             >
               About
             </Link>
+            <Link
+              href="/contact"
+              className="text-foreground hover:text-primary transition-colors duration-200 font-medium"
+            >
+              Contact
+            </Link>
           </nav>
 
           {/* Mobile menu button */}
@@ -68,6 +74,13 @@ export default function Header() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 About
+              </Link>
+              <Link
+                href="/contact"
+                className="text-foreground hover:text-primary transition-colors duration-200 font-medium px-2 py-1"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Contact
               </Link>
             </nav>
           </div>

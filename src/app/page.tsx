@@ -9,18 +9,18 @@ export default function Home() {
       date: "December 2024",
       readTime: "5 min read",
       category: "Mountains",
-      image: "/98690.jpg",
-      imageAlt: "Mountain landscape with lake and snow-capped peaks"
+      image: "/images/travel/austrian alps/Hiking-in-austria_tirol-1024x683.jpg",
+      imageAlt: "Hiking in Austrian Alps"
     },
     {
       id: 2,
-      title: "Croatian Coastal Dreams",
-      excerpt: "Sailing along the Adriatic coastline, from the historic walls of Dubrovnik to the pristine beaches of the Kornati Islands. Where the sea meets ancient stone.",
+      title: "Cyprus Sea Caves Adventure",
+      excerpt: "Exploring the beautiful coastal landscapes and ancient sea caves carved by the Mediterranean waves over millennia. Discovering hidden turquoise waters and crystal-clear pools.",
       date: "November 2024",
       readTime: "7 min read",
       category: "Coastal",
-      image: "/98699.jpg",
-      imageAlt: "Coastal sea caves with turquoise waters"
+      image: "/sea-caves-cyprus-cyprus (1).avif",
+      imageAlt: "Sea caves in Cyprus with turquoise waters"
     },
     {
       id: 3,
@@ -29,8 +29,8 @@ export default function Home() {
       date: "October 2024",
       readTime: "6 min read",
       category: "Forests",
-      image: "/100530.jpg",
-      imageAlt: "Person in natural rock archway overlooking the sea"
+      image: "/images/travel/austrian alps/hiker-overlooking-french-alps-752x501.jpg",
+      imageAlt: "Hiker overlooking Triglav National Park"
     }
   ]
 
@@ -41,8 +41,8 @@ export default function Home() {
         {/* Hero Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/98690.jpg"
-            alt="Breathtaking mountain landscape with lake and snow-capped peaks"
+            src="/sea-caves-cyprus-cyprus (1).avif"
+            alt="Beautiful Cyprus sea caves at sunset with turquoise waters"
             fill
             className="object-cover"
             priority
@@ -51,7 +51,7 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
+          <h1 className="text-6xl md:text-8xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
             Travel Tales
           </h1>
           <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed drop-shadow-md">
@@ -85,7 +85,7 @@ export default function Home() {
       {/* Featured Stories Section */}
       <section id="stories" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary-dark mb-4">
+          <h2 className="text-5xl md:text-6xl font-bold text-primary-dark mb-4">
             Featured Adventures
           </h2>
           <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
@@ -112,7 +112,7 @@ export default function Home() {
 
               <div className="p-6">
                 <div className="flex items-center justify-between mb-3">
-                  <span className="px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full">
+                  <span className="px-3 py-1 bg-primary/10 text-primary text-base font-medium rounded-full">
                     {story.category}
                   </span>
                   <span className="text-sm text-foreground/60">
@@ -120,7 +120,7 @@ export default function Home() {
                   </span>
                 </div>
 
-                <h3 className="text-xl font-semibold text-primary-dark mb-3 group-hover:text-primary transition-colors duration-200">
+                <h3 className="text-2xl font-semibold text-primary-dark mb-3 group-hover:text-primary transition-colors duration-200">
                   {story.title}
                 </h3>
 
@@ -147,7 +147,7 @@ export default function Home() {
         {/* Call to Action */}
         <div className="text-center mt-16">
           <div className="bg-gradient-to-r from-primary/5 via-sage/10 to-accent/5 rounded-3xl p-8 md:p-12">
-            <h3 className="text-3xl font-bold text-primary-dark mb-4">
+            <h3 className="text-4xl font-bold text-primary-dark mb-4">
               Follow My Adventures
             </h3>
             <p className="text-lg text-foreground/70 mb-6 max-w-2xl mx-auto">

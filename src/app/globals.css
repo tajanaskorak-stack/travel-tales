@@ -6,12 +6,12 @@
 :root {
   --background: #fefefe;
   --foreground: #1a1a1a;
-  --primary: #2d5a3d;
-  --primary-dark: #1e3a28;
+  --primary: #2E8B8B;
+  --primary-dark: #006666;
   --secondary: #8b7355;
   --accent: #d4a574;
-  --sage: #a8b5a0;
-  --forest: #4a5d4a;
+  --sage: #7FB8B8;
+  --forest: #008B8B;
   --earth: #8b6f47;
   --sky: #87ceeb;
   --sunset: #ff7f50;
@@ -21,12 +21,12 @@
   :root {
     --background: #1a1a1a;
     --foreground: #f5f5f5;
-    --primary: #4a7c59;
-    --primary-dark: #2d5a3d;
+    --primary: #20B2AA;
+    --primary-dark: #006666;
     --secondary: #a8906d;
     --accent: #e6b17a;
-    --sage: #9ba88d;
-    --forest: #6b826b;
+    --sage: #7FB8B8;
+    --forest: #008B8B;
     --earth: #a8906d;
     --sky: #4682b4;
     --sunset: #ff6347;
@@ -151,5 +151,5 @@ html {
 /* Custom focus styles */
 .focus-ring:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(45, 90, 61, 0.3);
+  box-shadow: 0 0 0 3px rgba(46, 139, 139, 0.3);
 }

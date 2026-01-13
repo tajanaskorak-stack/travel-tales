@@ -95,48 +95,35 @@ export default function About() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary/10 via-sage/20 to-accent/10">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-primary-dark mb-6">
+      <section className="relative h-[600px] flex items-center justify-center overflow-hidden">
+        <Image
+          src="/sea-caves-cyprus-cyprus (1).avif"
+          alt="Beautiful Cyprus sea caves at sunset with turquoise waters"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="relative z-10 max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 drop-shadow-lg">
             About My Journey
           </h1>
-          <p className="text-xl text-foreground/80 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl text-white/90 max-w-2xl mx-auto leading-relaxed drop-shadow-md">
             I'm passionate about discovering the world's natural wonders and sharing stories
             that inspire others to explore mindfully and connect deeply with our planet.
           </p>
         </div>
       </section>
 
-      {/* Cover Photo */}
-      <section className="relative h-96 overflow-hidden">
-        <Image
-          src="/images/04AUSTRIASKI-superJumbo-1.jpg"
-          alt="Beautiful Austrian landscape showcasing nature and adventure"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-          <div className="text-center text-white">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">
-              My Travel Adventures
-            </h2>
-            <p className="text-xl max-w-2xl mx-auto">
-              Exploring the world's most beautiful landscapes, one journey at a time
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Main Content */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
-          {/* Personal Story */}
-          <div className="space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary-dark">
+      <section className="py-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        {/* Personal Story */}
+        <div className="max-w-4xl mx-auto mb-32">
+          <div className="space-y-8">
+            <h2 className="text-4xl md:text-5xl font-bold text-primary-dark mb-8 text-center">
               Hello, I'm a Nature Explorer
             </h2>
-            <div className="space-y-4 text-lg text-foreground/80 leading-relaxed">
+            <div className="space-y-6 text-lg text-foreground/80 leading-relaxed">
               <p>
                 My journey began with a simple belief: that the most profound experiences
                 happen when we step outside our comfort zones and into the embrace of nature.
@@ -158,32 +145,32 @@ export default function About() {
               </p>
             </div>
           </div>
+        </div>
 
-          {/* Values Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {values.map((value, index) => (
-              <div
-                key={index}
-                className="bg-white p-6 rounded-2xl shadow-lg border border-sage/20 hover:shadow-xl transition-all duration-300"
-              >
-                <div className="text-4xl mb-4">{value.icon}</div>
-                <h3 className="text-xl font-semibold text-primary-dark mb-3">
-                  {value.title}
-                </h3>
-                <p className="text-foreground/70 leading-relaxed">
-                  {value.description}
-                </p>
-              </div>
-            ))}
-          </div>
+        {/* Values Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-32">
+          {values.map((value, index) => (
+            <div
+              key={index}
+              className="bg-white p-8 rounded-2xl shadow-lg border border-sage/20 hover:shadow-xl transition-all duration-300"
+            >
+              <div className="text-5xl mb-6">{value.icon}</div>
+              <h3 className="text-2xl font-semibold text-primary-dark mb-4">
+                {value.title}
+              </h3>
+              <p className="text-foreground/70 leading-relaxed text-base">
+                {value.description}
+              </p>
+            </div>
+          ))}
         </div>
 
         {/* Recent Journeys */}
-        <div className="mb-20">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary-dark text-center mb-12">
+        <div className="mb-32 mt-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-primary-dark text-center mb-16">
             Recent Adventures
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {recentJourneys.map((journey, index) => (
               <div
                 key={index}
@@ -201,15 +188,15 @@ export default function About() {
                 </div>
 
                 {/* Journey Content */}
-                <div className="p-8">
-                  <h3 className="text-xl font-semibold text-primary-dark mb-4">
+                <div className="p-10">
+                  <h3 className="text-2xl font-semibold text-primary-dark mb-6">
                     {journey.location}
                   </h3>
-                  <p className="text-foreground/70 mb-4 leading-relaxed">
+                  <p className="text-foreground/70 mb-6 leading-relaxed text-base">
                     {journey.description}
                   </p>
-                  <div className="bg-primary/10 p-4 rounded-lg">
-                    <p className="text-primary font-medium italic">
+                  <div className="bg-primary/10 p-5 rounded-lg">
+                    <p className="text-primary font-medium italic text-base">
                       "{journey.highlight}"
                     </p>
                   </div>
@@ -220,11 +207,11 @@ export default function About() {
         </div>
 
         {/* Travel Gallery */}
-        <div className="mb-20">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary-dark text-center mb-12">
+        <div className="mb-32">
+          <h2 className="text-4xl md:text-5xl font-bold text-primary-dark text-center mb-16">
             Travel Gallery
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {galleryImages.map((image, index) => (
               <div key={index} className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
                 <div className="aspect-square relative">
@@ -240,7 +227,7 @@ export default function About() {
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                   <div className="p-4 text-white">
-                    <h3 className="font-semibold text-lg">{image.title}</h3>
+                    <h3 className="font-semibold text-xl">{image.title}</h3>
                   </div>
                 </div>
               </div>
@@ -249,44 +236,44 @@ export default function About() {
         </div>
 
         {/* Philosophy Section */}
-        <div className="bg-gradient-to-r from-primary/5 via-sage/10 to-accent/5 rounded-3xl p-8 md:p-12">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary-dark mb-6">
+        <div className="bg-gradient-to-r from-primary/5 via-sage/10 to-accent/5 rounded-3xl p-12 md:p-16 mb-32">
+          <div className="max-w-5xl mx-auto text-center">
+            <h2 className="text-4xl md:text-5xl font-bold text-primary-dark mb-12">
               My Travel Philosophy
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-              <div className="space-y-4">
-                <h3 className="text-xl font-semibold text-primary-dark">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-left">
+              <div className="space-y-5">
+                <h3 className="text-2xl font-semibold text-primary-dark mb-2">
                   Leave No Trace
                 </h3>
-                <p className="text-foreground/70 leading-relaxed">
+                <p className="text-foreground/70 leading-relaxed text-base">
                   Every step I take is mindful of the environment. I carry out what I carry in,
                   respect wildlife habitats, and choose eco-friendly transportation whenever possible.
                 </p>
               </div>
-              <div className="space-y-4">
-                <h3 className="text-xl font-semibold text-primary-dark">
+              <div className="space-y-5">
+                <h3 className="text-2xl font-semibold text-primary-dark mb-2">
                   Cultural Respect
                 </h3>
-                <p className="text-foreground/70 leading-relaxed">
+                <p className="text-foreground/70 leading-relaxed text-base">
                   I approach each destination with curiosity and respect for local customs,
                   traditions, and ways of life. Learning from communities enriches both traveler and host.
                 </p>
               </div>
-              <div className="space-y-4">
-                <h3 className="text-xl font-semibold text-primary-dark">
+              <div className="space-y-5">
+                <h3 className="text-2xl font-semibold text-primary-dark mb-2">
                   Slow Travel
                 </h3>
-                <p className="text-foreground/70 leading-relaxed">
+                <p className="text-foreground/70 leading-relaxed text-base">
                   Quality over quantity. I prefer immersive experiences in fewer places rather than
                   rushing through multiple destinations. Depth over breadth.
                 </p>
               </div>
-              <div className="space-y-4">
-                <h3 className="text-xl font-semibold text-primary-dark">
+              <div className="space-y-5">
+                <h3 className="text-2xl font-semibold text-primary-dark mb-2">
                   Share the Wonder
                 </h3>
-                <p className="text-foreground/70 leading-relaxed">
+                <p className="text-foreground/70 leading-relaxed text-base">
                   Through my stories and photographs, I hope to inspire others to explore responsibly
                   and discover the magic that exists beyond our everyday routines.
                 </p>
@@ -296,11 +283,11 @@ export default function About() {
         </div>
 
         {/* Call to Action */}
-        <div className="text-center mt-16">
-          <h3 className="text-2xl font-bold text-primary-dark mb-4">
+        <div className="text-center mt-24">
+          <h3 className="text-3xl font-bold text-primary-dark mb-6">
             Ready to Start Your Own Journey?
           </h3>
-          <p className="text-lg text-foreground/70 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-foreground/70 mb-10 max-w-2xl mx-auto leading-relaxed">
             Follow my adventures on Instagram for daily inspiration, travel tips,
             and behind-the-scenes moments from the world's most beautiful places.
           </p>
