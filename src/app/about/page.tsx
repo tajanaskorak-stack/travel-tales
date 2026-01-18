@@ -293,6 +293,62 @@ export default function About() {
               </svg>
             </button>
 
+            {/* Left Navigation Button */}
+            {galleryImages.length > 1 && (
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setSelectedImage((selectedImage - 1 + galleryImages.length) % galleryImages.length);
+                }}
+                className="absolute left-4 top-1/2 -translate-y-1/2 z-[60] text-white hover:text-gray-300 transition-colors duration-200 p-3 bg-black/50 rounded-full hover:bg-black/70"
+                aria-label="Previous image"
+                type="button"
+              >
+                <svg 
+                  className="w-8 h-8" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    strokeWidth={2} 
+                    d="M15 19l-7-7 7-7" 
+                  />
+                </svg>
+              </button>
+            )}
+
+            {/* Right Navigation Button */}
+            {galleryImages.length > 1 && (
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setSelectedImage((selectedImage + 1) % galleryImages.length);
+                }}
+                className="absolute right-4 top-1/2 -translate-y-1/2 z-[60] text-white hover:text-gray-300 transition-colors duration-200 p-3 bg-black/50 rounded-full hover:bg-black/70"
+                aria-label="Next image"
+                type="button"
+              >
+                <svg 
+                  className="w-8 h-8" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    strokeWidth={2} 
+                    d="M9 5l7 7-7 7" 
+                  />
+                </svg>
+              </button>
+            )}
+
             {/* Modal Content */}
             <div 
               className="relative max-w-5xl w-full max-h-[90vh] z-40"
