@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Home() {
   const featuredStories = [
@@ -132,12 +133,15 @@ export default function Home() {
                   <span className="text-sm text-foreground/60">
                     {story.date}
                   </span>
-                  <button className="text-primary font-medium hover:text-primary-dark transition-colors duration-200 flex items-center space-x-1">
+                  <Link
+                    href={`/adventures/${story.id}`}
+                    className="text-primary font-medium hover:text-primary-dark transition-colors duration-200 flex items-center space-x-1"
+                  >
                     <span>Read more</span>
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
-                  </button>
+                  </Link>
                 </div>
               </div>
             </article>
