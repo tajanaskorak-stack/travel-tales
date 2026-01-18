@@ -267,14 +267,16 @@ export default function About() {
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
             onClick={() => setSelectedImage(null)}
           >
-            {/* Close Button */}
+            {/* Close Button - Higher z-index to ensure it's clickable */}
             <button
               onClick={(e) => {
+                e.preventDefault();
                 e.stopPropagation();
                 setSelectedImage(null);
               }}
-              className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors duration-200 z-10"
+              className="absolute top-4 right-4 z-[60] text-white hover:text-gray-300 transition-colors duration-200 p-2 bg-black/50 rounded-full hover:bg-black/70"
               aria-label="Close gallery"
+              type="button"
             >
               <svg 
                 className="w-8 h-8" 
@@ -293,7 +295,7 @@ export default function About() {
 
             {/* Modal Content */}
             <div 
-              className="relative max-w-5xl w-full max-h-[90vh]"
+              className="relative max-w-5xl w-full max-h-[90vh] z-40"
               onClick={(e) => e.stopPropagation()}
             >
               <div className="relative w-full aspect-video mb-4">
@@ -306,7 +308,7 @@ export default function About() {
                 />
               </div>
               
-              {/* Title only - no alt text below */}
+              {/* Title only - no descriptions/alt text shown */}
               <div className="text-center">
                 <h3 className="text-2xl md:text-3xl font-semibold text-white">
                   {galleryImages[selectedImage].title}
