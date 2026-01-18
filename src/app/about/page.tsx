@@ -72,7 +72,7 @@ export default function About() {
     {
       src: "/100530.jpg",
       alt: "Person in natural rock archway overlooking the sea",
-      title: "Coastal Adventure"
+      title: "Queen of the Dolomites"
     },
     {
       src: "/102781.jpg",
