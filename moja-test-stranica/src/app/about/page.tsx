@@ -1,6 +1,10 @@
+'use client'
+
 import Image from 'next/image';
+import { useState } from 'react';
 
 export default function About() {
+  const [selectedImage, setSelectedImage] = useState<number | null>(null);
   const values = [
     {
       title: "Sustainable Travel",
@@ -73,7 +77,7 @@ export default function About() {
     {
       src: "/102781.jpg",
       alt: "Skiing in snowy mountain landscape",
-      title: "Winter Sports"
+      title: "Snow Sports"
     },
     {
       src: "/images/travel/austrian alps/Hiking-in-austria_tirol-1024x683.jpg",
@@ -213,7 +217,11 @@ export default function About() {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {galleryImages.map((image, index) => (
-              <div key={index} className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+              <div 
+                key={index} 
+                className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
+                onClick={() => setSelectedImage(index)}
+              >
                 <div className="aspect-square relative">
                   <Image
                     src={image.src}
@@ -234,6 +242,61 @@ export default function About() {
             ))}
           </div>
         </div>
+
+        {/* Gallery Modal */}
+        {selectedImage !== null && (
+          <div 
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
+            onClick={() => setSelectedImage(null)}
+          >
+            {/* Close Button */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setSelectedImage(null);
+              }}
+              className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors duration-200 z-10"
+              aria-label="Close gallery"
+            >
+              <svg 
+                className="w-8 h-8" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  strokeWidth={2} 
+                  d="M6 18L18 6M6 6l12 12" 
+                />
+              </svg>
+            </button>
+
+            {/* Modal Content */}
+            <div 
+              className="relative max-w-5xl w-full max-h-[90vh]"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="relative w-full aspect-video mb-4">
+                <Image
+                  src={galleryImages[selectedImage].src}
+                  alt={galleryImages[selectedImage].alt}
+                  fill
+                  className="object-contain"
+                  sizes="90vw"
+                />
+              </div>
+              
+              {/* Title only - no alt text below */}
+              <div className="text-center">
+                <h3 className="text-2xl md:text-3xl font-semibold text-white">
+                  {galleryImages[selectedImage].title}
+                </h3>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Philosophy Section */}
         <div className="bg-gradient-to-r from-primary/5 via-sage/10 to-accent/5 rounded-3xl p-12 md:p-16 mb-32">
